@@ -1,2 +1,16 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+
+<h2>Title</h2>
+<p><%= @list.title %></p>
+
+<h2>Body</h2>
+<P><%= @list.body %></P>
+
+<span><%= link_to "back", '/lists' %></span>
+
+<p>
+    <span><%= link_to "edit", edit_list_path(@list.id) %></span>
+</p>
+
+<span>
+<%= link_to "destroy", destroy_list_path(@list.id), method: :delete, "data-confirm"=>"destroy?" %>
+</span>

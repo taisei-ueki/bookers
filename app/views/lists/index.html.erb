@@ -1,2 +1,19 @@
-<h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
+<h1>Books</h1>
+
+<% @lists.each do |list| %>
+
+<p>Title</p>
+<span><%= list.title %></span>
+
+<p> Body</p>
+<span><%= list.body %></span>
+
+<p>
+<span><%= link_to "show", list_path(list.id) %></span>
+</p>
+
+<p>
+    <span><%= link_to "edit", edit_list_path(list.id) %></span>
+</p>
+
+<% end %>
