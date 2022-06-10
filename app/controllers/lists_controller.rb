@@ -4,13 +4,18 @@ class ListsController < ApplicationController
   end
   
   def create
-    list =List.new(list_params)
-    list.save
-    redirect_to list_path(list.id)
+    @list =List.new(list_params)
+    if @list.save
+      flash[:notice] = "Book was successfully created"
+      redirect_to list_path(@list.id)
+    else
+      render :new
+    end
   end  
 
   def index
     @lists = List.all
+    @list =List.new
   end
 
   def show
@@ -19,18 +24,29 @@ class ListsController < ApplicationController
 
   def edit
     @list = List.find(params[:id])
+    
   end 
   
   def update
-    list = List.find(params[:id])
-    list.update(list_params)
-    redirect_to list_path(list.id)
+    @list = List.find(params[:id])
+    if @list.update(list_params)
+     
+      flash[:notice] = "Book was successfully created"
+      redirect_to list_path(@list.id)
+    else
+      render :edit
+    end
   end
   
   def destroy
     list = List.find(params[:id])
-    list.destroy
-    redirect_to '/lists'
+    if list.destroy
+     flash[:notice] = "Book was successfully destroyed."
+     redirect_to '/lists'
+    else
+      render :show
+    end  
+    
   end
   
   
