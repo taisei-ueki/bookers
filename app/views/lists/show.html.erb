@@ -1,19 +1,18 @@
-<%= notice %>
-<h2>Title</h2>
-<p><%= @list.title %></p>
+<div class="flash"><%= notice %></div>
 
-<h2>Body</h2>
-<P><%= @list.body %></P>
 
-<span><%= link_to "back", '/lists' %></span>
+<div class="show-field">Title:
+<%= @list.title %></div>
 
-<p>
-    <span><%= link_to "edit", edit_list_path(@list.id) %></span>
-</p>
+<div class="show-field">Body:
+<%= @list.body %></div>
 
-<span>
-<%= link_to "destroy", list_path(@list.id), method: :delete, "data-confirm"=>"Are you sure?" %>
-</span>
+
+
+<span><%= link_to "Edit", edit_list_path(@list.id) %></span>
+|
+<span><%= link_to "Back", '/lists' %></span>
+
 
 
 

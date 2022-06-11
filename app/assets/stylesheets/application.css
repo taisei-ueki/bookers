@@ -20,12 +20,58 @@
   box-sizing: border-box;
 }
 
-header{
-  width: 100%;
-  
+body{
+  font-size: 13px;
+  margin:33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+}
+.top-text{
+  margin: 20px;
 }
 
+th{
+   padding-bottom: 5px;
+}
 td {
+  color: #333;
   padding: 0px 7px 5px;
   
+}
+.field{
+  margin-bottom: 10px;
+}
+.show-field{
+  margin: 25px;
+}
+.edit-field{
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.flash{
+  color: green;
+}
+.error{
+  width: 450px;
+  border: 2px solid red;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+.error-title{
+  background-color: red;
+  color: #fff;
+  padding: 5px 5px 5px 15px;
+}
+ul{
+  margin: 33px;
+}
+li{
+  padding-left: 15px;
+}
+.field_with_errors{
+  background-color: red;
+  display: table;
+  padding: 2px;
+}
+a{
+  color: #000;
 }

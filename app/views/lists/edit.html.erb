@@ -10,23 +10,22 @@
   </ul>
 <% end %>
 
-<%= form_with model: @list, url:update_list_path(@list.id), method: :patch do |f| %>
+<%= form_with model: @list, url:list_path(@list.id), method: :patch do |f| %>
 
-<h4>Tilte</h4>
-<%= f.text_field :title %>
+<div class="edit-field">Tilte
+<p><%= f.text_field :title %></p>
+</div>
 
-<h4>Body</h4>
-<%= f.text_area :body %>
-
+<div class ="edit-field">Body
+<p><%= f.text_area :body %></p>
+</div>
+<div class ="edit-field">
 <%= f.submit 'Update Book' %>
+</div>
+<p></p>
 
-<p>
-<span><%= link_to "back", '/lists' %></span>
-</p>
-<p>
-<span><%= link_to "show", list_path(@list.id) %></span>
-</p>
-
+<span><%= link_to "Show", list_path(@list.id) %></span>
+|<span><%= link_to "Back", '/lists' %></span>
 
 
 
